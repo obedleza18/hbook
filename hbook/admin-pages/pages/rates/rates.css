@@ -1,0 +1,17 @@
+.hb-add-new.spinner {
+    margin: -3px 0 0 3px;
+}
+
+.wrap .add-new-h2, 
+.wrap .add-new-h2:active {
+	margin-left: 10px;
+	top: -1px;
+}
+
+input[type="text"].hb-rate-amount {
+	width: 80px;
+}
+
+input[type="text"].hb-rate-nights {
+	width: 40px;
+}

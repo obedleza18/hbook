@@ -1,0 +1,13 @@
+.hb-fees-table .hb-table-head-data,
+.hb-fees-table .hb-table-data {
+	width: 21%;
+}
+
+.hb-fees-table .hb-table-data-action,
+.hb-fees-table .hb-table-head-data-action {
+	width: 16%;
+}
+
+.hb-fees-table select {
+	width: 100%;
+}
