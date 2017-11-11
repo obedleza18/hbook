@@ -264,6 +264,14 @@ class HBook {
 
 			'hb_update_resa_dates',
 
+			/**
+			 *  The following lines were modified by Maximo Leza. The purpose is to declare the
+			 *	AJAX function and send the email template.
+			 *
+			 *	Support: https://www.upwork.com/o/profiles/users/_~012d9d1278bdc04412/
+			 */
+			'hb_send_email_reminder',
+
 		);
 
 		foreach ( $admin_ajax_action as $action ) {
