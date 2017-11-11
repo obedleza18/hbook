@@ -506,6 +506,40 @@ class HbFrontEndAjaxActions {
 
 	}
 
+	/**
+	 *  The following function was created by Maximo Leza for sending the Email Reminder to those
+	 *	clients that have paid the deposit but still the payment is incomplete.
+	 *
+	 *	Support: https://www.upwork.com/o/profiles/users/_~012d9d1278bdc04412/
+	 */
+	function hb_send_email_reminder() {
+		global $wpdb;
+
+		/*  Get the reservations */
+		$reservations = $wpdb->get_results( "SELECT * FROM " . $wpdb->prefix . "hb_resa" );
+
+		/*  Check which reservations are not fully paid */
+		foreach ( $reservations as $reservation ) {
+			$price = floatval( $reservation->price );
+			$deposit = floatval( $reservation->deposit );
+			$paid = floatval( $reservation->paid );
+
+			if ( $paid >= $deposit && $paid < $price ) {
+
+				/*  Check if it's 28 days before the reservation */
+				$check_in = DateTime::createFromFormat( 'Y-m-d', $reservation->check_in );
+				$today = new DateTime( 'now' );
+				$diff_days = $today->diff( $check_in )->days;
+
+				if ( $diff_days == 28 ) {
+					$this->utils->send_email( 'send_email_reminder', $reservation->id );
+				}
+			}
+		}
+		die;
+	}
+	/*  End of modifications */
+
 	
 
 }
