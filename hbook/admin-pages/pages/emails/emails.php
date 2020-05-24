@@ -47,7 +47,19 @@ class HbAdminPageEmails extends HbAdminPage {
 	                    'action_value' => 'not_automatic',
 	                    //'action_text' => esc_html__( 'Not automatically sent', 'hbook-admin' ),
 	                    'action_text' => esc_html__( 'Inactive', 'hbook-admin' )
-	                )
+	                ),
+	                
+	                /**
+					 *  The following lines were modified by Maximo Leza. The purpose is to set the
+					 *	action to send an email reminder.
+					 *
+					 *	Support: https://www.upwork.com/o/profiles/users/_~012d9d1278bdc04412/
+					 */
+	                array(
+	                    'action_value' => 'send_email_reminder',
+	                    'action_text' => esc_html__( 'Email Reminder', 'hbook-admin' )
+	                ),
+	                /*  End of modifications */
             	) 
 			),
         );
